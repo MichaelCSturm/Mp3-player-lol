@@ -1,0 +1,22 @@
+import os
+import pygame
+
+pygame.init()
+pygame.mixer.init()
+
+# Path 
+mp3_file = "my_music.mp3"
+
+# File into memory
+pygame.mixer.music.load(mp3_file)
+
+# Play the file
+pygame.mixer.music.play()
+
+# Keep the script running until the user hits the 'q' key
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_q:
+                pygame.quit()
+                os._exit(1)
